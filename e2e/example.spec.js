@@ -21,13 +21,13 @@
 const { test, expect } = require("@playwright/test");
 
 test("AppHasAddButton", async ({ page }) => {
-  await page.goto("localhost:8080");
+  await page.goto("localhost:80");
   const addButton = await page.$('button:has-text("add")');
   expect(addButton).not.toBeNull();
 });
 
 test("AppCanSubtract", async ({ page }) => {
-  await page.goto("localhost:8080");
+  await page.goto("localhost:80");
   await page.fill("#number1", "7");
   await page.fill("#number2", "3");
   await page.click("#subtract");
